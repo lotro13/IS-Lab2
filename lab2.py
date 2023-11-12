@@ -65,7 +65,7 @@ print(f"w11: {w11}, w21: {w21}, w31: {w31}, w41: {w41}, w51: {w51}, w61: {w61}")
 print(f"b11: {b11}, b21: {b21}, b31: {b31}, b41: {b41}, b51: {b51}, b61: {b61}")
 print(f"w12: {w12}, w22: {w22}, w32: {w32}, w42: {w42}, w52: {w52}, w62: {w62}")
 print(f"b12: {b12}")
-n = 0.1
+n = 0.5
 
 for i in range(10000):
     for j in range(len(x)):
@@ -101,7 +101,7 @@ for i in range(10000):
         w42 = w42 + n * delta_out * y41
         w52 = w52 + n * delta_out * y51
         w62 = w62 + n * delta_out * y61
-        b12 = b12 + n * delta_out * 1
+        b12 = b12 + n * delta_out
 
         w11 = w11 + n*delta_hidden1 * x[j]
         b11 = b11 + n*delta_hidden1
@@ -137,6 +137,6 @@ print(f"b11: {b11}, b21: {b21}, b31: {b31}, b41: {b41}, b51: {b51}, b61: {b61}")
 print(f"w12: {w12}, w22: {w22}, w32: {w32}, w42: {w42}, w52: {w52}, w62: {w62}")
 print(f"b12: {b12}")
 
-plt.plot(x, d, 'bo')
+plt.plot(x, d, 'b')
 plt.plot(x, output_values, 'rx')
 plt.show()
